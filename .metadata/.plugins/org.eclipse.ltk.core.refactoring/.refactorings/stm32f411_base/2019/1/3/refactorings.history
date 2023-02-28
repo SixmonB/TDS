@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;stm32f411_base/src/main_synthese.c&apos; to &apos;main_bypass.c&apos;" description="Rename resource &apos;main_synthese.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main_synthese.c" name="main_bypass.c" stamp="1547482439443" updateReferences="true"/>
+</session>

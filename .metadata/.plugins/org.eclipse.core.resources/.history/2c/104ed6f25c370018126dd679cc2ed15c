@@ -1,0 +1,198 @@
+//=============================================================
+#include "main.h"
+#include "arm_math.h"
+#include "stm32_wm5102_init.h"
+#include "tables.h"
+#include "keyboard.h"
+#include "notes.h"
+
+//===============================================================
+#define SAMPLING_FREQ 48000
+#define SINE_FREQ	440.0
+
+#if SAMPLING_FREQ==48000
+#define FREQ_ECH_ FS_48000_HZ
+#elif SAMPLING_FREQ==16000
+#define FREQ_ECH_ FS_16000_HZ
+#elif SAMPLING_FREQ==8000
+#define FREQ_ECH_ FS_8000_HZ
+#endif
+//===============================================================
+extern TIM_HandleTypeDef    TimHandle4;
+extern TIM_HandleTypeDef    TimHandle5;
+
+float frequency = 0.0;
+float amplitude = 1000.0;
+float theta_increment;
+float theta = 0.0;
+uint16_t k=0;
+uint8_t note_on = 0;
+
+
+//===============================================================
+void I2S_RxCpltCallback(void)
+{
+  int16_t left_in_sample, left_out_sample = 0;
+  int16_t right_in_sample, right_out_sample = 0;
+  float y;
+
+  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_0, 1);
+
+  if (SPI_I2S_GetFlagStatus(I2Sx, I2S_FLAG_CHSIDE) == SET)
+    {
+	  left_in_sample = SPI_I2S_ReceiveData(I2Sx); // obligatoire pour acquitter int
+      left_out_sample = 0;
+      while (SPI_I2S_GetFlagStatus(I2Sxext, SPI_I2S_FLAG_TXE ) != SET){}
+      SPI_I2S_SendData(I2Sxext, left_out_sample);
+    }
+  else
+    {
+	  right_in_sample = SPI_I2S_ReceiveData(I2Sx);
+
+	  if(frequency > 0.0) {
+					  theta_increment = 2.0*PI*frequency/(float)SAMPLING_FREQ;
+					  theta += theta_increment;
+					  if (theta > 2.0*PI) theta = theta - 2.0*PI;
+							k=(uint16_t)(((TAILLE_TABLE-1)*theta)/(2.0*PI));
+							right_out_sample =  (int16_t)((float)sinus_int[k]);
+	  }
+	  else {
+		  right_out_sample = 0;
+	  }
+
+      while (SPI_I2S_GetFlagStatus(I2Sxext, SPI_I2S_FLAG_TXE ) != SET){}
+      SPI_I2S_SendData(I2Sxext, right_out_sample);
+    }
+  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_0, 0);
+
+}
+
+//===============================================================
+// 				TIMER INTERRUPT CALLBACK FUNCTION
+//================================================================
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+	if(htim==&TimHandle5)
+	{
+	}
+}
+//============================================================================
+//	>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>	MAIN	<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+//============================================================================
+
+int main(void)
+{
+    uint16_t val, n_max;
+    uint8_t mess_to_send[3];
+    uint8_t lentgth;
+
+	HAL_Init();
+	SystemClock_Config();
+
+	__HAL_RCC_PLLI2S_CONFIG(258, 3);
+	__HAL_RCC_PLLI2S_ENABLE();
+
+	uart2_Init();
+	uart6_Init();			// CABLE MIDI
+	i2c1_Init();
+	i2s2_Init();
+
+	HAL_Delay(1000);
+
+	term_printf("start \n\r");
+	stm32_wm5102_init(FREQ_ECH_, WM5102_LINE_IN, IO_METHOD_INTR);
+
+	timer5_Init(1);
+	timer5_Start();
+
+		while(1)
+		{
+			//------------------------------------------------
+			// 					MIDI SNIFFER
+			//------------------------------------------------
+
+
+			if(MIDI_receive())
+			{
+				switch (midi_mess.type)
+				{
+					case NOTE_ON : 	term_printf("NOTE ON, channel : %d, Note : %d, Velocity : %d \n\r",midi_mess.channel, midi_mess.data1, midi_mess.data2);
+									insert_val_tab(tab_notes_on, midi_mess.data1, LENGTH_TAB_NOTES);
+
+									mess_to_send[0]= midi_mess.type | midi_mess.channel ;
+									mess_to_send[1]= midi_mess.data1;
+									mess_to_send[2]= midi_mess.data2;
+									//MIDI_send(mess_to_send , 3);
+
+									uart6_write(mess_to_send,3);
+									break;
+
+					case NOTE_OFF:	term_printf("NOTE OFF, channel : %d, Note : %d, Velocity : %d \n\r",midi_mess.channel, midi_mess.data1, midi_mess.data2);
+					  	  	  	  	delete_val_tab( tab_notes_on,midi_mess.data1,LENGTH_TAB_NOTES);
+					  	  	  	  	insert_val_tab(tab_notes_off, midi_mess.data1, LENGTH_TAB_NOTES);
+
+					  				mess_to_send[0]= midi_mess.type | midi_mess.channel ;
+					  				mess_to_send[1]= midi_mess.data1;
+					  				mess_to_send[2]= midi_mess.data2;
+					  				MIDI_send(mess_to_send , 3);
+					  	  	  	  	break;
+
+					case CONTROL_CHANGE:
+									term_printf("CONTROL CHANGE, channel : %d, control Nbr : %d, Value : %d \n\r",midi_mess.channel, midi_mess.data1, midi_mess.data2);
+
+									mess_to_send[0]= midi_mess.type | midi_mess.channel ;
+									mess_to_send[1]= midi_mess.data1;
+									mess_to_send[2]= midi_mess.data2;
+									MIDI_send(mess_to_send , 3);
+									break;
+
+					case PITCH_BEND:
+									val = midi_mess.data2 << 7 | midi_mess.data1;
+									term_printf("PITCH_BEND, channel : %d, Valule : %d \n\r",midi_mess.channel,val);
+
+									mess_to_send[0]= midi_mess.type | midi_mess.channel ;
+									mess_to_send[1]= midi_mess.data1;
+									mess_to_send[2]= midi_mess.data2;
+									MIDI_send(mess_to_send , 3);
+									break;
+
+					case PROGRAM_CHANGE:
+									term_printf("PRG CHANGE, channel : %d, Valule : %d \n\r",midi_mess.channel,midi_mess.data1);
+
+									mess_to_send[0]= midi_mess.type | midi_mess.channel ;
+									mess_to_send[1]= midi_mess.data1;
+									MIDI_send(mess_to_send , 2);
+									break;
+
+					case RESET : 	term_printf("RESET \n\r");
+
+									mess_to_send[0]= midi_mess.type;
+									MIDI_send(mess_to_send , 1);
+									break;
+
+					default : break ;
+				}
+
+				// Note election ( 	highest-pitched wins among pressed)
+				n_max = val_max_tab(tab_notes_on,LENGTH_TAB_NOTES );
+
+				if (n_max > 0)
+				{
+					frequency = table_freq[n_max];
+				}
+				else
+				{
+					frequency = 0.0;
+				}
+			}
+
+		//	MIDI_send_job();
+
+		//	HAL_Delay(1);
+
+
+		}
+	return 0;
+}
+//============================================================================
+

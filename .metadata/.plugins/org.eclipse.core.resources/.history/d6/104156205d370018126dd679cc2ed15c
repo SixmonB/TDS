@@ -1,0 +1,247 @@
+/*
+ * midi.c
+ *
+ *  Created on: Mar 23, 2018
+ *      Author: kerhoas
+ */
+#include "midi.h"
+
+#define BUF_SIZE	100
+
+uint8_t		p_wr = 0;
+uint8_t 	p_rd = 0;
+uint8_t		datas_available;
+uint8_t 	size = 0;
+uint8_t 	midi_buf[BUF_SIZE];
+
+uint8_t 	midi_buf_send[BUF_SIZE];
+
+//=========================================================================
+void MIDI_rcv_cb(uint8_t car)
+{
+		midi_buf[(p_wr++)%BUF_SIZE] = car;
+		size++;
+}
+//=========================================================================
+uint8_t MIDI_receive()
+{
+	//--------------------------------------------------------------------
+	if (size == 0)
+	{
+		return 0;
+	}
+	//--------------------------------------------------------------------
+	if( size == 1 )
+	{
+		midi_mess.type	= midi_buf[p_rd];
+		switch ( midi_mess.type )
+		{
+			case	TUNE_REQUEST		:
+			case 	EOF_EXCLUSIVE		:
+			case	TIMING_CLK			:
+			case	START				:
+			case	CONTINUE			:
+			case	STOP				:
+			case	ACTIVE_SENSING		:
+			case 	RESET				:		// Valid Message
+											size = 0;
+											p_wr = p_rd;
+											return 1;
+											break;
+			default : return 0;
+		}
+	}
+	//--------------------------------------------------------------------
+	if( size == 2 )
+	{
+		midi_mess.channel = ( midi_buf[p_rd] & CHANNEL_MASK ) + 1 ;
+		midi_mess.type	= midi_buf[p_rd] & TYPE_MASK;
+
+		switch (midi_mess.type)
+		{
+			case		PROGRAM_CHANGE			:
+			case		CHANNEL_PRESS_AFT		:
+												// Valid Message
+													midi_mess.data1 = midi_buf[(p_rd+1)%BUF_SIZE] & 0x7F;
+													midi_mess.data2 = 0;
+													size = 0;
+													p_wr = p_rd;
+													return 1;
+													break;
+
+			case		SYSTEM_MESSAGE	:		if (( midi_mess.type == TIME_CODE_QUARTER_FRAME ) || ( midi_mess.type == SONG_SELECT ))
+												{	// Valid Message
+													midi_mess.data1 = midi_buf[(p_rd+1)%BUF_SIZE] & 0x7F;
+													midi_mess.data2 = 0;
+													size = 0;
+													p_wr = p_rd;
+													return 1;
+
+												}
+												else
+												{
+													return 0;
+												}
+												break;
+			default	:	return 0;	break;
+		}
+	}
+	//--------------------------------------------------------------------
+	if( size == 3 )
+	{
+		midi_mess.channel = ( midi_buf[p_rd] & CHANNEL_MASK ) + 1 ;
+		midi_mess.type	= midi_buf[p_rd];
+
+		switch ( midi_mess.type & TYPE_MASK )
+		{
+			case NOTE_ON		:
+			case NOTE_OFF		:
+			case CONTROL_CHANGE	:
+			case PITCH_BEND		:
+							// Valid Message
+							midi_mess.data1 = midi_buf[(p_rd+1)%BUF_SIZE] & 0x7F;
+							midi_mess.data2 = midi_buf[(p_rd+2)%BUF_SIZE] & 0x7F;
+
+							size = 0;
+							p_wr = p_rd;
+							return 1;
+							break;
+
+			case SYSTEM_MESSAGE	:		if ( midi_mess.type == SONG_POS_POINTER )
+										{
+											// Valid Message
+											midi_mess.data1 = midi_buf[(p_rd+1)%BUF_SIZE] & 0x7F;
+											midi_mess.data2 = midi_buf[(p_rd+2)%BUF_SIZE] & 0x7F;
+
+											size = 0;
+											p_wr = p_rd;
+											return 1;
+										}
+										else
+										{
+											// Not a Valid Message
+											size = 0;
+											p_wr = p_rd;
+											return 0;
+										}
+							break;
+
+			default :
+							// Not a Valid Message
+							size = 0;
+							p_wr = p_rd;
+							return 0;
+							break;
+		}
+
+	}
+	//--------------------------------------------------------------------
+	if( size  > 3)
+	{
+		midi_mess.type	= midi_buf[p_rd];
+			// COULD BE A SYSTEM MESSAGE
+			if ( midi_mess.type == RESET )
+			{
+				// Valid Message
+				size = size -1;
+				p_rd = (p_rd + 1)%BUF_SIZE;
+				return 1;
+			}
+
+		midi_mess.type	= midi_buf[p_rd] & TYPE_MASK;
+		midi_mess.channel = ( midi_buf[p_rd] & CHANNEL_MASK ) + 1 ;
+
+		if ( midi_mess.type == PROGRAM_CHANGE )
+		{
+			// Valid Message
+			midi_mess.data1 = midi_buf[(p_rd+1)%BUF_SIZE] & 0x7F;
+			size = size - 2;
+			p_rd = (p_rd + 2)%BUF_SIZE;
+			return 1;
+		}
+
+		if (( midi_mess.type == NOTE_ON ) || ( midi_mess.type == NOTE_OFF )|| ( midi_mess.type == CONTROL_CHANGE ) || ( midi_mess.type == PITCH_BEND ))
+		{
+				// Valid Message
+				midi_mess.data1 = midi_buf[(p_rd+1)%BUF_SIZE] & 0x7F;
+				midi_mess.data2 = midi_buf[(p_rd+2)%BUF_SIZE] & 0x7F;
+
+				size = size - 3;
+				p_rd = (p_rd + 3)%BUF_SIZE;
+				return 1;
+		}
+	}	// SIZE > 3
+	//--------------------------------------------------------------------
+	// PANIC : MSB =! 1
+	//--------------------------------------------------------------------
+	return 0;
+}
+//=========================================================================
+
+uint8_t p_wr_s = 0;
+uint8_t p_rd_s = 0;
+
+uint8_t MIDI_send(uint8_t* mess , uint8_t length)
+{
+	/*int i = 0;
+	for(i=0 ; i < length ; i++)
+	{
+
+		midi_buf_send[p_wr_s] = mess[i];
+		p_wr_s = (p_wr_s+1)%BUF_SIZE;
+	}
+	return 1;
+	*/
+
+
+
+
+	return 1;
+}
+
+uint8_t MIDI_send_job()
+{
+	if (p_rd_s == p_wr_s)
+	{
+		return 1;
+	}
+	else
+	{
+
+		uart6_write(midi_buf_send + p_rd_s, 1);
+
+
+		//term_printf("p_wr_s %d p_rd_s %d  \n\r",p_wr_s, p_rd_s);
+		//term_printf("WRITE %x \n\r",midi_buf_send[p_rd_s]);
+
+		p_rd_s = (p_rd_s + 1)%BUF_SIZE;
+		return 1;
+	}
+}
+
+//=========================================================================
+
+
+/*	uint8_t buf[3];
+
+	if(length == 3)
+	{
+		buf[0] = ( mess.type )  | ( mess.channel );
+		buf[1] = mess.data1;
+		buf[2] = mess.data2;
+		uart6_write(buf, 3);
+	}
+
+	if(length == 2)
+	{
+		buf[0] = ( mess.type )  | ( mess.channel );
+		buf[1] = mess.data1;
+		uart6_write(buf, 2);
+	}
+
+	if(length == 1)
+	{
+		buf[0] =  mess.type   ;
+		uart6_write(buf, 1);
+	}
+*/
