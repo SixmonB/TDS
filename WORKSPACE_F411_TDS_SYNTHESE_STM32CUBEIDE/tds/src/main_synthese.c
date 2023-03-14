@@ -6,9 +6,10 @@
 #include "notes.h"
 
 //===============================================================
-#define RECURRENCE 1
-#define TABLE 0
+#define RECURRENCE 0
+#define TABLE 1
 #define pi 3.1416
+#define DOUBLE_FREQ 1
 //===============================================================
 
 #define SAMPLING_FREQ 48000
@@ -30,10 +31,9 @@ extern TIM_HandleTypeDef    TimHandle5;
 #if RECURRENCE
 
 
-float32_t b = arm_sin_f32(2*pi*SINE_FREQ/SAMPLING_FREQ);
-float32_t a = -2*arm_cos_f32(2*pi*SINE_FREQ/SAMPLING_FREQ);
-float y_1 =b;
-float y_2 =0;
+float b = sin(2*pi*SINE_FREQ/FREQ_ECH_);
+float a = -2*cos(2*pi*SINE_FREQ/FREQ_ECH_);
+
 void I2S_RxCpltCallback(void)
 {
   int16_t left_in_sample = 0;
@@ -41,7 +41,9 @@ void I2S_RxCpltCallback(void)
 
   int16_t left_out_sample = 0;
   int16_t right_out_sample = 0;
-  float y = ;
+  static float y_1 = sin(2*pi*SINE_FREQ/FREQ_ECH_);
+  static float y_2 = 0;
+  float y;
 
   if (SPI_I2S_GetFlagStatus(I2Sx, I2S_FLAG_CHSIDE) == SET)
     {
@@ -53,9 +55,9 @@ void I2S_RxCpltCallback(void)
   else
     {
 		right_in_sample = SPI_I2S_ReceiveData(I2Sx); // obligatoire pour acquitter int
-	  y=0; // à compléter
-
-
+	  y= -a*y_1 - y_2; // à compléter
+	  y_2 = y_1;
+	  y_1 = y;
 
 	  right_out_sample =(int16_t)(y*10000.0); // amplification
       while (SPI_I2S_GetFlagStatus(I2Sxext, SPI_I2S_FLAG_TXE ) != SET){}
@@ -73,8 +75,8 @@ void I2S_RxCpltCallback(void)
   int16_t right_in_sample = 0;
   int16_t left_out_sample = 0;
   int16_t right_out_sample = 0;
-  float y;
-
+  int16_t y;
+  static int counter = 0;
   if (SPI_I2S_GetFlagStatus(I2Sx, I2S_FLAG_CHSIDE) == SET)
     {
 
@@ -86,7 +88,8 @@ void I2S_RxCpltCallback(void)
   else
     {
 	right_in_sample = SPI_I2S_ReceiveData(I2Sx); // obligatoire pour acquitter int
-	  y=0; // à compléter
+	  y=sinus_int[counter]; // à compléter
+	  counter = counter < TAILLE_TABLE-1 ? 	(DOUBLE_FREQ == 1 ? counter+2 : counter+1) : 0;
 	  right_out_sample =y;
       while (SPI_I2S_GetFlagStatus(I2Sxext, SPI_I2S_FLAG_TXE ) != SET){}
       SPI_I2S_SendData(I2Sxext, right_out_sample);
