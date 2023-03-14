@@ -1,0 +1,151 @@
+//=============================================================
+#include "main.h"
+#include "arm_math.h"
+#include "arm_const_structs.h"
+#include "stm32_wm5102_init.h"
+
+//============================================================================
+#define SAMPLING_FREQ 48000
+//============================================================================
+#if SAMPLING_FREQ==48000
+#define FREQ_ECH_ FS_48000_HZ
+#elif SAMPLING_FREQ==16000
+#define FREQ_ECH_ FS_16000_HZ
+#elif SAMPLING_FREQ==8000
+#define FREQ_ECH_ FS_8000_HZ
+#endif
+
+//============================================================================
+//					BYPASS
+//============================================================================
+
+int16_t samples[2400] = {0};
+
+void I2S_RxCpltCallback(void)
+{
+	int16_t left_out_sample = 0;
+	int16_t right_out_sample = 0;
+	int16_t left_in_sample = 0;
+	int16_t right_in_sample = 0;
+	int retard = 2400;
+
+
+	  if (SPI_I2S_GetFlagStatus(SPI2, I2S_FLAG_CHSIDE) == SET)
+	  {
+
+		samples[0] = SPI_I2S_ReceiveData(SPI2);
+		left_out_sample = (int16_t)(((float)samples[0] + (float)samples[2399]*0.8) * 0.9 + (float)samples[0]);
+		right_out_sample = left_out_sample;
+
+		for(int i = retard-1; i>0; i--){
+			samples[i] = samples[i-1];
+		}
+
+	    while (SPI_I2S_GetFlagStatus(I2S2ext, SPI_I2S_FLAG_TXE ) != SET){}
+	    SPI_I2S_SendData(I2S2ext, left_out_sample);
+	  }
+	  else
+	  {
+	    right_in_sample = SPI_I2S_ReceiveData(SPI2);
+	    right_out_sample = right_in_sample;
+
+	    while (SPI_I2S_GetFlagStatus(I2S2ext, SPI_I2S_FLAG_TXE ) != SET){}
+	    SPI_I2S_SendData(I2S2ext, right_out_sample);
+	  }
+}
+
+//============================================================================
+//	>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>	MAIN	<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+//============================================================================
+int main(void)
+{
+	HAL_Init();
+	SystemClock_Config();
+
+	__HAL_RCC_PLLI2S_CONFIG(258, 3);
+	__HAL_RCC_PLLI2S_ENABLE();
+
+	uart2_Init();
+	i2c1_Init();
+	i2s2_Init();
+
+	HAL_Delay(1000);
+
+
+	stm32_wm5102_init(FREQ_ECH_, WM5102_LINE_IN, IO_METHOD_INTR);
+
+
+	while(1)
+	{}
+	return 0;
+
+}
+//============================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//=================================================================
+/*
+void HAL_Delay(volatile uint32_t millis)
+{
+	// replace HAL library blocking delay function
+	//with FreeRTOS thread aware equivalent
+	vTaskDelay(millis);
+}
+*/
+//=======================================================================
+/*static void Error_Handler(void)
+{
+  while(1)
+  {
+  }
+}*/
+//=======================================================================
+#ifdef  USE_FULL_ASSERT
+
+/**
+  * @brief  Reports the name of the source file and the source line number
+  *         where the assert_param error has occurred.
+  * @param  file: pointer to the source file name
+  * @param  line: assert_param error line source number
+  * @retval None
+  */
+void assert_failed(uint8_t* file, uint32_t line)
+{
+  /* User can add his own implementation to report the file name and line number,
+     ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+
+  /* Infinite loop */
+  while (1)
+  {
+  }
+}
+#endif
+//=======================================================================
+
+
