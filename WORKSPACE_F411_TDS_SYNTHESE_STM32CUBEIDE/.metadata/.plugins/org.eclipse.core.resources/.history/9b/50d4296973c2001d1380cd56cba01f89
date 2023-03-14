@@ -1,0 +1,194 @@
+//=============================================================
+#include "main.h"
+#include "arm_math.h"
+#include "stm32_wm5102_init.h"
+#include "tables.h"
+#include "notes.h"
+
+//===============================================================
+#define RECURRENCE 1
+#define TABLE 0
+#define pi 3.1416
+//===============================================================
+
+#define SAMPLING_FREQ 48000
+#define SINE_FREQ	440.0
+
+#if SAMPLING_FREQ==48000
+#define FREQ_ECH_ FS_48000_HZ
+#elif SAMPLING_FREQ==16000
+#define FREQ_ECH_ FS_16000_HZ
+#elif SAMPLING_FREQ==8000
+#define FREQ_ECH_ FS_8000_HZ
+#endif
+//===============================================================
+extern TIM_HandleTypeDef    TimHandle5;
+
+//===============================================================
+//					Equation de Récurrence
+//===============================================================
+#if RECURRENCE
+
+float y_1 = sin(2*pi*SINE_FREQ/SAMPLING_FREQ);
+float y_2;
+void I2S_RxCpltCallback(void)
+{
+  int16_t left_in_sample = 0;
+  int16_t right_in_sample = 0;
+
+  int16_t left_out_sample = 0;
+  int16_t right_out_sample = 0;
+  float y;
+
+  if (SPI_I2S_GetFlagStatus(I2Sx, I2S_FLAG_CHSIDE) == SET)
+    {
+		left_in_sample = SPI_I2S_ReceiveData(I2Sx); // obligatoire pour acquitter int
+      left_out_sample = 0;
+      while (SPI_I2S_GetFlagStatus(I2Sxext, SPI_I2S_FLAG_TXE ) != SET){}
+      SPI_I2S_SendData(I2Sxext, left_out_sample);
+    }
+  else
+    {
+		right_in_sample = SPI_I2S_ReceiveData(I2Sx); // obligatoire pour acquitter int
+	  y=0; // à compléter
+
+
+
+	  right_out_sample =(int16_t)(y*10000.0); // amplification
+      while (SPI_I2S_GetFlagStatus(I2Sxext, SPI_I2S_FLAG_TXE ) != SET){}
+      SPI_I2S_SendData(I2Sxext, right_out_sample);
+    }
+}
+#endif
+//===============================================================
+//					Lecture de Table
+//===============================================================
+#if TABLE
+void I2S_RxCpltCallback(void)
+{
+  int16_t left_in_sample = 0;
+  int16_t right_in_sample = 0;
+  int16_t left_out_sample = 0;
+  int16_t right_out_sample = 0;
+  float y;
+
+  if (SPI_I2S_GetFlagStatus(I2Sx, I2S_FLAG_CHSIDE) == SET)
+    {
+
+	left_in_sample = SPI_I2S_ReceiveData(I2Sx); // obligatoire pour acquitter int
+      left_out_sample = 0;
+      while (SPI_I2S_GetFlagStatus(I2Sxext, SPI_I2S_FLAG_TXE ) != SET){}
+      SPI_I2S_SendData(I2Sxext, left_out_sample);
+    }
+  else
+    {
+	right_in_sample = SPI_I2S_ReceiveData(I2Sx); // obligatoire pour acquitter int
+	  y=0; // à compléter
+	  right_out_sample =y;
+      while (SPI_I2S_GetFlagStatus(I2Sxext, SPI_I2S_FLAG_TXE ) != SET){}
+      SPI_I2S_SendData(I2Sxext, right_out_sample);
+    }
+}
+#endif
+
+//===============================================================
+// 				TIMER INTERRUPT CALLBACK FUNCTION
+//================================================================
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+	if(htim==&TimHandle5)
+	{
+	}
+}
+//============================================================================
+//	>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>	MAIN	<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+//============================================================================
+
+int main(void)
+{
+
+    uint8_t mess_to_send[3];
+    uint16_t val;
+
+	HAL_Init();
+	SystemClock_Config();
+
+	__HAL_RCC_PLLI2S_CONFIG(258, 3);
+	__HAL_RCC_PLLI2S_ENABLE();
+
+	uart2_Init();
+	uart6_Init();			// CABLE MIDI//
+	i2c1_Init();
+	i2s2_Init();
+
+	HAL_Delay(1000);
+
+	term_printf("start \n\r");
+	stm32_wm5102_init(FREQ_ECH_, WM5102_LINE_IN, IO_METHOD_INTR);
+
+		while(1)
+		{
+
+
+			//------------------------------------------------
+			// 					MIDI SNIFFER
+			//------------------------------------------------
+					if(MIDI_receive())
+					{
+						switch (midi_mess.type)
+						{
+							case NOTE_ON : 	term_printf("NOTE ON, channel : %d, Note : %d, Velocity : %d \n\r",midi_mess.channel, midi_mess.data1, midi_mess.data2);
+											mess_to_send[0]= midi_mess.type | midi_mess.channel ;
+											mess_to_send[1]= midi_mess.data1;
+											mess_to_send[2]= midi_mess.data2;
+											MIDI_send(mess_to_send , 3);
+											break;
+
+							case NOTE_OFF:	term_printf("NOTE OFF, channel : %d, Note : %d, Velocity : %d \n\r",midi_mess.channel, midi_mess.data1, midi_mess.data2);
+
+							  				mess_to_send[0]= midi_mess.type | midi_mess.channel ;
+							  				mess_to_send[1]= midi_mess.data1;
+							  				mess_to_send[2]= midi_mess.data2;
+							  				MIDI_send(mess_to_send , 3);
+							  	  	  	  	break;
+
+							case CONTROL_CHANGE:
+											term_printf("CONTROL CHANGE, channel : %d, control Nbr : %d, Value : %d \n\r",midi_mess.channel, midi_mess.data1, midi_mess.data2);
+											mess_to_send[0]= midi_mess.type | midi_mess.channel ;
+											mess_to_send[1]= midi_mess.data1;
+											mess_to_send[2]= midi_mess.data2;
+											MIDI_send(mess_to_send , 3);
+											break;
+
+							case PITCH_BEND:
+											val = midi_mess.data2 << 7 | midi_mess.data1;
+											term_printf("PITCH_BEND, channel : %d, Value : %d \n\r",midi_mess.channel,val);
+											mess_to_send[0]= midi_mess.type | midi_mess.channel ;
+											mess_to_send[1]= midi_mess.data1;
+											mess_to_send[2]= midi_mess.data2;
+											MIDI_send(mess_to_send , 3);
+											break;
+
+							case PROGRAM_CHANGE:
+											term_printf("PRG CHANGE, channel : %d, Value : %d \n\r",midi_mess.channel,midi_mess.data1);
+											mess_to_send[0]= midi_mess.type | midi_mess.channel ;
+											mess_to_send[1]= midi_mess.data1;
+											MIDI_send(mess_to_send , 2);
+											break;
+
+							case RESET : 	term_printf("RESET \n\r");
+											mess_to_send[0]= midi_mess.type;
+											MIDI_send(mess_to_send , 1);
+											break;
+
+							default : break ;
+						}
+					}
+
+
+
+		}
+	return 0;
+}
+//============================================================================
+

@@ -1,0 +1,6 @@
+../src/timer_duree.c:18:6:timer4_Init	24	static
+../src/timer_duree.c:33:6:timer5_Init	24	static
+../src/timer_duree.c:46:6:timer4_Start	8	static
+../src/timer_duree.c:51:6:timer5_Start	8	static
+../src/timer_duree.c:56:6:timer4_change_period	16	static
+../src/timer_duree.c:61:6:timer5_change_period	16	static

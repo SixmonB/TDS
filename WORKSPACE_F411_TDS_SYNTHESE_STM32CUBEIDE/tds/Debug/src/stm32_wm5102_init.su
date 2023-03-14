@@ -1,0 +1,4 @@
+../src/stm32_wm5102_init.c:42:7:prbs	16	static
+../src/stm32_wm5102_init.c:66:10:Codec_WriteRegister	16	static
+../src/stm32_wm5102_init.c:75:6:configure_codec	16	static
+../src/stm32_wm5102_init.c:241:6:stm32_wm5102_init	24	static

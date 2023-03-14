@@ -1,0 +1,5 @@
+../src/keyboard.c:11:9:val_min_tab	24	static
+../src/keyboard.c:25:9:val_index_min_tab	24	static
+../src/keyboard.c:40:6:insert_val_tab	16	static
+../src/keyboard.c:45:6:delete_val_tab	24	static
+../src/keyboard.c:55:9:val_max_tab	24	static

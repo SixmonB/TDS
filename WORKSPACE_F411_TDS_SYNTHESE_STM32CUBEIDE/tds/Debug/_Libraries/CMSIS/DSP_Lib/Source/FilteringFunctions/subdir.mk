@@ -1,0 +1,320 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+# Toolchain: GNU Tools for STM32 (10.3-2021.10)
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+C_SRCS += \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_32x64_init_q31.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_32x64_q31.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_f32.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_fast_q15.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_fast_q31.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_init_f32.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_init_q15.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_init_q31.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_q15.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_q31.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df2T_f32.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df2T_init_f32.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_f32.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_fast_opt_q15.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_fast_q15.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_fast_q31.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_opt_q15.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_opt_q7.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_f32.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_fast_opt_q15.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_fast_q15.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_fast_q31.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_opt_q15.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_opt_q7.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_q15.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_q31.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_q7.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_q15.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_q31.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_q7.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_f32.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_fast_opt_q15.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_fast_q15.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_fast_q31.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_opt_q15.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_opt_q7.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_q15.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_q31.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_q7.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_f32.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_fast_q15.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_fast_q31.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_init_f32.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_init_q15.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_init_q31.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_q15.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_q31.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_f32.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_fast_q15.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_fast_q31.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_init_f32.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_init_q15.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_init_q31.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_init_q7.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_f32.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_init_f32.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_init_q15.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_init_q31.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_q15.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_q31.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_f32.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_init_f32.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_init_q15.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_init_q31.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_q15.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_q31.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_q15.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_q31.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_q7.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_f32.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_init_f32.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_init_q15.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_init_q31.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_init_q7.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_q15.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_q31.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_q7.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_f32.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_init_f32.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_init_q15.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_init_q31.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_q15.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_q31.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_f32.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_init_f32.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_init_q15.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_init_q31.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_f32.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_init_f32.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_init_q15.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_init_q31.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_q15.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_q31.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_q15.c \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_q31.c 
+
+O_SRCS += \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_f32.o \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_init_f32.o \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_init_q15.o \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_q15.o \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_f32.o \
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_init_f32.o 
+
+OBJS += \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_32x64_init_q31.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_32x64_q31.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_f32.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_fast_q15.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_fast_q31.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_init_f32.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_init_q15.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_init_q31.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_q15.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_q31.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df2T_f32.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df2T_init_f32.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_f32.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_fast_opt_q15.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_fast_q15.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_fast_q31.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_opt_q15.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_opt_q7.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_f32.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_fast_opt_q15.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_fast_q15.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_fast_q31.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_opt_q15.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_opt_q7.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_q15.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_q31.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_q7.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_q15.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_q31.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_q7.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_f32.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_fast_opt_q15.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_fast_q15.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_fast_q31.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_opt_q15.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_opt_q7.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_q15.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_q31.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_q7.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_f32.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_fast_q15.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_fast_q31.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_init_f32.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_init_q15.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_init_q31.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_q15.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_q31.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_f32.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_fast_q15.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_fast_q31.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_init_f32.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_init_q15.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_init_q31.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_init_q7.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_f32.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_init_f32.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_init_q15.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_init_q31.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_q15.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_q31.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_f32.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_init_f32.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_init_q15.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_init_q31.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_q15.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_q31.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_q15.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_q31.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_q7.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_f32.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_init_f32.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_init_q15.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_init_q31.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_init_q7.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_q15.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_q31.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_q7.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_f32.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_init_f32.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_init_q15.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_init_q31.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_q15.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_q31.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_f32.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_init_f32.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_init_q15.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_init_q31.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_f32.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_init_f32.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_init_q15.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_init_q31.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_q15.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_q31.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_q15.o \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_q31.o 
+
+C_DEPS += \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_32x64_init_q31.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_32x64_q31.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_f32.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_fast_q15.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_fast_q31.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_init_f32.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_init_q15.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_init_q31.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_q15.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_q31.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df2T_f32.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df2T_init_f32.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_f32.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_fast_opt_q15.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_fast_q15.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_fast_q31.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_opt_q15.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_opt_q7.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_f32.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_fast_opt_q15.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_fast_q15.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_fast_q31.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_opt_q15.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_opt_q7.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_q15.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_q31.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_q7.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_q15.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_q31.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_q7.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_f32.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_fast_opt_q15.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_fast_q15.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_fast_q31.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_opt_q15.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_opt_q7.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_q15.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_q31.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_q7.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_f32.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_fast_q15.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_fast_q31.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_init_f32.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_init_q15.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_init_q31.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_q15.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_q31.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_f32.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_fast_q15.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_fast_q31.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_init_f32.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_init_q15.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_init_q31.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_init_q7.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_f32.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_init_f32.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_init_q15.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_init_q31.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_q15.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_q31.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_f32.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_init_f32.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_init_q15.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_init_q31.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_q15.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_q31.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_q15.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_q31.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_q7.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_f32.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_init_f32.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_init_q15.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_init_q31.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_init_q7.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_q15.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_q31.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_q7.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_f32.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_init_f32.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_init_q15.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_init_q31.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_q15.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_q31.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_f32.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_init_f32.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_init_q15.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_init_q31.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_f32.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_init_f32.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_init_q15.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_init_q31.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_q15.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_q31.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_q15.d \
+./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_q31.d 
+
+
+# Each subdirectory must supply rules for building sources it contributes
+_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/%.o _Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/%.su: ../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/%.c _Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/subdir.mk
+	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DNUCLEO_F411RE -DDEBUG -DSTM32F411xE -DUSE_HAL_DRIVER -c -I"/home/casa/kerhoas/Desktop/TDS/WORKSPACE_F411_TDS_SYNTHESE_STM32CUBEIDE/tds/_Libraries/STM32F4xx_HAL_Driver/Inc" -I"/home/casa/kerhoas/Desktop/TDS/WORKSPACE_F411_TDS_SYNTHESE_STM32CUBEIDE/tds/_Libraries/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/home/casa/kerhoas/Desktop/TDS/WORKSPACE_F411_TDS_SYNTHESE_STM32CUBEIDE/tds/src/drv" -I"/home/casa/kerhoas/Desktop/TDS/WORKSPACE_F411_TDS_SYNTHESE_STM32CUBEIDE/tds/_Libraries/BSP/STM32F4xx-Nucleo" -I"/home/casa/kerhoas/Desktop/TDS/WORKSPACE_F411_TDS_SYNTHESE_STM32CUBEIDE/tds/_Libraries/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/casa/kerhoas/Desktop/TDS/WORKSPACE_F411_TDS_SYNTHESE_STM32CUBEIDE/tds/_Libraries/CMSIS/Include" -I"/home/casa/kerhoas/Desktop/TDS/WORKSPACE_F411_TDS_SYNTHESE_STM32CUBEIDE/tds/inc" -O0 -ffunction-sections -Wall -D __FPU_PRESENT=1 -D ARM_MATH_CM4 -mlittle-endian -mthumb -mcpu=cortex-m4 -mthumb-interwork -Wl,--gc-sections -mfpu=fpv4-sp-d16 -mfloat-abi=hard -fsingle-precision-constant -fcommon -fstack-usage -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@"  -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
+
+clean: clean-_Libraries-2f-CMSIS-2f-DSP_Lib-2f-Source-2f-FilteringFunctions
+
+clean-_Libraries-2f-CMSIS-2f-DSP_Lib-2f-Source-2f-FilteringFunctions:
+	-$(RM) ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_32x64_init_q31.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_32x64_init_q31.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_32x64_init_q31.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_32x64_q31.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_32x64_q31.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_32x64_q31.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_f32.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_f32.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_f32.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_fast_q15.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_fast_q15.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_fast_q15.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_fast_q31.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_fast_q31.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_fast_q31.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_init_f32.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_init_f32.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_init_f32.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_init_q15.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_init_q15.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_init_q15.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_init_q31.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_init_q31.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_init_q31.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_q15.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_q15.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_q15.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_q31.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_q31.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_q31.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df2T_f32.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df2T_f32.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df2T_f32.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df2T_init_f32.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df2T_init_f32.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df2T_init_f32.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_f32.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_f32.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_f32.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_fast_opt_q15.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_fast_opt_q15.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_fast_opt_q15.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_fast_q15.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_fast_q15.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_fast_q15.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_fast_q31.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_fast_q31.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_fast_q31.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_opt_q15.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_opt_q15.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_opt_q15.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_opt_q7.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_opt_q7.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_opt_q7.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_f32.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_f32.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_f32.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_fast_opt_q15.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_fast_opt_q15.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_fast_opt_q15.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_fast_q15.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_fast_q15.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_fast_q15.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_fast_q31.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_fast_q31.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_fast_q31.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_opt_q15.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_opt_q15.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_opt_q15.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_opt_q7.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_opt_q7.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_opt_q7.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_q15.d
+	-$(RM) ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_q15.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_q15.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_q31.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_q31.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_q31.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_q7.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_q7.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_q7.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_q15.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_q15.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_q15.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_q31.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_q31.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_q31.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_q7.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_q7.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_q7.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_f32.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_f32.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_f32.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_fast_opt_q15.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_fast_opt_q15.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_fast_opt_q15.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_fast_q15.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_fast_q15.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_fast_q15.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_fast_q31.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_fast_q31.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_fast_q31.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_opt_q15.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_opt_q15.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_opt_q15.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_opt_q7.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_opt_q7.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_opt_q7.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_q15.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_q15.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_q15.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_q31.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_q31.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_q31.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_q7.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_q7.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_q7.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_f32.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_f32.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_f32.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_fast_q15.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_fast_q15.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_fast_q15.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_fast_q31.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_fast_q31.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_fast_q31.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_init_f32.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_init_f32.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_init_f32.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_init_q15.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_init_q15.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_init_q15.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_init_q31.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_init_q31.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_init_q31.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_q15.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_q15.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_q15.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_q31.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_q31.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_q31.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_f32.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_f32.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_f32.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_fast_q15.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_fast_q15.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_fast_q15.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_fast_q31.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_fast_q31.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_fast_q31.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_init_f32.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_init_f32.o
+	-$(RM) ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_init_f32.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_init_q15.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_init_q15.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_init_q15.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_init_q31.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_init_q31.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_init_q31.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_init_q7.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_init_q7.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_init_q7.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_f32.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_f32.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_f32.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_init_f32.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_init_f32.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_init_f32.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_init_q15.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_init_q15.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_init_q15.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_init_q31.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_init_q31.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_init_q31.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_q15.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_q15.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_q15.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_q31.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_q31.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_q31.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_f32.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_f32.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_f32.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_init_f32.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_init_f32.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_init_f32.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_init_q15.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_init_q15.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_init_q15.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_init_q31.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_init_q31.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_init_q31.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_q15.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_q15.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_q15.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_q31.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_q31.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_q31.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_q15.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_q15.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_q15.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_q31.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_q31.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_q31.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_q7.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_q7.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_q7.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_f32.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_f32.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_f32.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_init_f32.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_init_f32.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_init_f32.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_init_q15.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_init_q15.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_init_q15.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_init_q31.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_init_q31.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_init_q31.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_init_q7.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_init_q7.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_init_q7.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_q15.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_q15.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_q15.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_q31.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_q31.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_q31.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_q7.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_q7.o
+	-$(RM) ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_q7.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_f32.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_f32.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_f32.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_init_f32.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_init_f32.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_init_f32.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_init_q15.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_init_q15.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_init_q15.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_init_q31.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_init_q31.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_init_q31.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_q15.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_q15.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_q15.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_q31.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_q31.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_q31.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_f32.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_f32.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_f32.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_init_f32.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_init_f32.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_init_f32.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_init_q15.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_init_q15.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_init_q15.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_init_q31.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_init_q31.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_init_q31.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_f32.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_f32.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_f32.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_init_f32.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_init_f32.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_init_f32.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_init_q15.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_init_q15.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_init_q15.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_init_q31.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_init_q31.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_init_q31.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_q15.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_q15.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_q15.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_q31.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_q31.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_q31.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_q15.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_q15.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_q15.su ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_q31.d ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_q31.o ./_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_q31.su
+
+.PHONY: clean-_Libraries-2f-CMSIS-2f-DSP_Lib-2f-Source-2f-FilteringFunctions
+

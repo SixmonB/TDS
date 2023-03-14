@@ -1,0 +1,3 @@
+/home/casa/kerhoas/Desktop/TDS/WORKSPACE_F411_TDS_SYNTHESE_STM32CUBEIDE/tds/_Libraries/CMSIS/Include/arm_math.h:6029:24:arm_circularWrite_q15	32	static
+/home/casa/kerhoas/Desktop/TDS/WORKSPACE_F411_TDS_SYNTHESE_STM32CUBEIDE/tds/_Libraries/CMSIS/Include/arm_math.h:6074:24:arm_circularRead_q15	40	static
+../_Libraries/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_q15.c:68:6:arm_fir_sparse_q15	184	static,ignoring_inline_asm

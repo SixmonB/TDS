@@ -1,0 +1,10 @@
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c:180:19:HAL_DMA_Init	24	static
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c:272:19:HAL_DMA_DeInit	16	static
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c:357:19:HAL_DMA_Start	24	static
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c:389:19:HAL_DMA_Start_IT	24	static
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c:439:19:HAL_DMA_Abort	24	static
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c:484:19:HAL_DMA_PollForTransfer	48	static
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c:638:6:HAL_DMA_IRQHandler	16	static
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c:851:22:HAL_DMA_GetState	16	static
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c:862:10:HAL_DMA_GetError	16	static
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c:888:13:DMA_SetConfig	24	static

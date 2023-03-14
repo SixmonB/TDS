@@ -1,0 +1,4 @@
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c:115:12:HAL_FLASHEx_StopFlashInterfaceClk	4	static
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c:132:12:HAL_FLASHEx_StartFlashInterfaceClk	4	static
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c:149:12:HAL_FLASHEx_EnableFlashSleepMode	4	static
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c:166:12:HAL_FLASHEx_DisableFlashSleepMode	4	static

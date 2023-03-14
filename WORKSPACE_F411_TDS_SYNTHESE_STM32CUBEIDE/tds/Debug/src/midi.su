@@ -1,0 +1,3 @@
+../src/midi.c:20:6:MIDI_rcv_cb	16	static
+../src/midi.c:26:9:MIDI_receive	4	static
+../src/midi.c:181:9:MIDI_send	16	static

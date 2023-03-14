@@ -1,0 +1,13 @@
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_sdmmc.c:213:19:SDIO_Init	24	static
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_sdmmc.c:265:10:SDIO_ReadFIFO	16	static
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_sdmmc.c:277:19:SDIO_WriteFIFO	16	static
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_sdmmc.c:309:19:SDIO_PowerState_ON	16	static
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_sdmmc.c:322:19:SDIO_PowerState_OFF	16	static
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_sdmmc.c:339:10:SDIO_GetPowerState	16	static
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_sdmmc.c:352:19:SDIO_SendCommand	24	static
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_sdmmc.c:382:9:SDIO_GetCommandResponse	16	static
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_sdmmc.c:398:10:SDIO_GetResponse	24	static
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_sdmmc.c:419:19:SDIO_DataConfig	24	static
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_sdmmc.c:454:10:SDIO_GetDataCounter	16	static
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_sdmmc.c:464:10:SDIO_GetFIFOCount	16	static
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_sdmmc.c:478:19:SDIO_SetSDIOReadWaitMode	16	static

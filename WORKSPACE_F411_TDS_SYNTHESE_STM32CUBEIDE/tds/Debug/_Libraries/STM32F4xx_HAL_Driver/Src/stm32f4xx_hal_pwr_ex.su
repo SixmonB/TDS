@@ -1,0 +1,8 @@
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c:159:19:HAL_PWREx_EnableBkUpReg	32	static,ignoring_inline_asm
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c:183:19:HAL_PWREx_DisableBkUpReg	32	static,ignoring_inline_asm
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c:207:6:HAL_PWREx_EnableFlashPowerDown	24	static,ignoring_inline_asm
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c:216:6:HAL_PWREx_DisableFlashPowerDown	24	static,ignoring_inline_asm
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c:227:6:HAL_PWREx_EnableMainRegulatorLowVoltage	24	static,ignoring_inline_asm
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c:237:6:HAL_PWREx_DisableMainRegulatorLowVoltage	24	static,ignoring_inline_asm
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c:247:6:HAL_PWREx_EnableLowRegulatorLowVoltage	24	static,ignoring_inline_asm
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c:257:6:HAL_PWREx_DisableLowRegulatorLowVoltage	24	static,ignoring_inline_asm

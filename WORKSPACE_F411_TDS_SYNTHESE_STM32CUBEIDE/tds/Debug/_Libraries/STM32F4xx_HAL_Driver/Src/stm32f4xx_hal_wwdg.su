@@ -1,0 +1,10 @@
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_wwdg.c:150:19:HAL_WWDG_Init	16	static
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_wwdg.c:191:19:HAL_WWDG_DeInit	16	static
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_wwdg.c:233:13:HAL_WWDG_MspInit	16	static
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_wwdg.c:246:13:HAL_WWDG_MspDeInit	16	static
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_wwdg.c:280:19:HAL_WWDG_Start	16	static
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_wwdg.c:307:19:HAL_WWDG_Start_IT	16	static
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_wwdg.c:332:19:HAL_WWDG_Refresh	16	static
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_wwdg.c:369:6:HAL_WWDG_IRQHandler	16	static
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_wwdg.c:398:13:HAL_WWDG_WakeupCallback	16	static
+../_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_wwdg.c:430:23:HAL_WWDG_GetState	16	static
