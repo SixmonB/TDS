@@ -1,19 +1,19 @@
-15:42:56 **** Incremental Build of configuration Debug for project tds ****
+16:52:04 **** Incremental Build of configuration Debug for project tds ****
 make all 
 arm-none-eabi-gcc "../src/main_synthese.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DNUCLEO_F411RE -DDEBUG -DSTM32F411xE -DUSE_HAL_DRIVER -c -I"C:/Users/sbsim/Documents/ENIB Materias/TSI/WORKSPACE_F411_TDS_SYNTHESE_STM32CUBEIDE/tds/_Libraries/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/sbsim/Documents/ENIB Materias/TSI/WORKSPACE_F411_TDS_SYNTHESE_STM32CUBEIDE/tds/_Libraries/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/sbsim/Documents/ENIB Materias/TSI/WORKSPACE_F411_TDS_SYNTHESE_STM32CUBEIDE/tds/src/drv" -I"C:/Users/sbsim/Documents/ENIB Materias/TSI/WORKSPACE_F411_TDS_SYNTHESE_STM32CUBEIDE/tds/_Libraries/BSP/STM32F4xx-Nucleo" -I"C:/Users/sbsim/Documents/ENIB Materias/TSI/WORKSPACE_F411_TDS_SYNTHESE_STM32CUBEIDE/tds/_Libraries/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/sbsim/Documents/ENIB Materias/TSI/WORKSPACE_F411_TDS_SYNTHESE_STM32CUBEIDE/tds/_Libraries/CMSIS/Include" -I"C:/Users/sbsim/Documents/ENIB Materias/TSI/WORKSPACE_F411_TDS_SYNTHESE_STM32CUBEIDE/tds/inc" -O0 -ffunction-sections -Wall -D __FPU_PRESENT=1 -D ARM_MATH_CM4 -mlittle-endian -mthumb -mcpu=cortex-m4 -mthumb-interwork -Wl,--gc-sections -mfpu=fpv4-sp-d16 -mfloat-abi=hard -fsingle-precision-constant -fcommon -fstack-usage -MMD -MP -MF"src/main_synthese.d" -MT"src/main_synthese.o"  -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/main_synthese.o"
 ../src/main_synthese.c: In function 'I2S_RxCpltCallback':
-../src/main_synthese.c:39:11: warning: variable 'right_in_sample' set but not used [-Wunused-but-set-variable]
-   39 |   int16_t right_in_sample = 0;
+../src/main_synthese.c:75:11: warning: variable 'right_in_sample' set but not used [-Wunused-but-set-variable]
+   75 |   int16_t right_in_sample = 0;
       |           ^~~~~~~~~~~~~~~
-../src/main_synthese.c:38:11: warning: variable 'left_in_sample' set but not used [-Wunused-but-set-variable]
-   38 |   int16_t left_in_sample = 0;
+../src/main_synthese.c:74:11: warning: variable 'left_in_sample' set but not used [-Wunused-but-set-variable]
+   74 |   int16_t left_in_sample = 0;
       |           ^~~~~~~~~~~~~~
 arm-none-eabi-gcc -o "tds.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\sbsim\Documents\ENIB Materias\TSI\WORKSPACE_F411_TDS_SYNTHESE_STM32CUBEIDE\tds\LinkerScript.ld" -Wl,-Map="tds.map" -Wl,--gc-sections -static -lgcov -lm  -mfloat-abi=hard -Wl,-Map=tds.elf.ma  -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: tds.elf
  
 arm-none-eabi-size   tds.elf 
    text	   data	    bss	    dec	    hex	filename
-  24988	  61936	   3044	  89968	  15f70	tds.elf
+  24956	  61920	   3044	  89920	  15f40	tds.elf
 Finished building: default.size.stdout
  
 arm-none-eabi-objdump -h -S  tds.elf  > "tds.list"
@@ -23,5 +23,5 @@ arm-none-eabi-objcopy  -O binary  tds.elf  "tds.bin"
 Finished building: tds.bin
  
 
-15:42:58 Build Finished. 0 errors, 2 warnings. (took 1s.476ms)
+16:52:05 Build Finished. 0 errors, 2 warnings. (took 1s.492ms)
 

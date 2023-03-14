@@ -6,9 +6,10 @@
 #include "notes.h"
 
 //===============================================================
-#define RECURRENCE 1
-#define TABLE 0
+#define RECURRENCE 0
+#define TABLE 1
 #define pi 3.1416
+#define DOUBLE_FREQ 1
 //===============================================================
 
 #define SAMPLING_FREQ 48000
@@ -74,8 +75,8 @@ void I2S_RxCpltCallback(void)
   int16_t right_in_sample = 0;
   int16_t left_out_sample = 0;
   int16_t right_out_sample = 0;
-  float y;
-
+  int16_t y;
+  static int counter = 0;
   if (SPI_I2S_GetFlagStatus(I2Sx, I2S_FLAG_CHSIDE) == SET)
     {
 
@@ -87,7 +88,8 @@ void I2S_RxCpltCallback(void)
   else
     {
 	right_in_sample = SPI_I2S_ReceiveData(I2Sx); // obligatoire pour acquitter int
-	  y=0; // à compléter
+	  y=sinus_int[counter]; // à compléter
+	  counter = counter < TAILLE_TABLE-1 ? 	(DOUBLE_FREQ == 1 ? counter+2 : counter+1) : 0;
 	  right_out_sample =y;
       while (SPI_I2S_GetFlagStatus(I2Sxext, SPI_I2S_FLAG_TXE ) != SET){}
       SPI_I2S_SendData(I2Sxext, right_out_sample);
